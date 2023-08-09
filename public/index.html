@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -28,16 +29,21 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+      <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LcmQpMnAAAAAGjzZz0RwTspuqT-pfiDjY_8dCad"></div>
+      <br/>
+      <input type="submit" value="Submit">
+      </form>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+   <script type="text/javascript">
+  var onloadCallback = function() {
+    alert("ReCaptcha is ready!");
+  };
+</script>
+    
   </body>
 </html>
